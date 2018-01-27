@@ -15,7 +15,7 @@ This is running in non-deamon mode for troubleshooting and log analysis.
 5. Optional: The output will dynamically generated in the docker container in the `output` directory.Enter into the container using following command:
    `docker exec -it /bin/bash single-file-wc-ctr` and `cd /output` to see the output file
 
-6. re-saved sample outfile   "single-file-sample-output"for reference.
+6. Pre-saved sample outfile "single-file-sample-output" for reference.
 
 ## Part-2 multiple_count_wordcount using goroutine
 
