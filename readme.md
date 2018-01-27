@@ -4,9 +4,11 @@
 
 2. `sudo docker build -t single-file-wc .`
 
-3. `sudo docker run --name single-file-wc-ctr -p 9080:9080 single-file-wc`. This is running in non-deamon mode for troubleshooting and log analysis.
+3. `sudo docker run --name single-file-wc-ctr -p 9080:9080 single-file-wc`.
 
-4. I exposed the outputfile as a web service. So, Open browser and type :
+This is running in non-deamon mode for troubleshooting and log analysis.
+
+4. Accesing the output: I exposed the outputfile as a web service. So, Open browser and type :
    `http://localhost:9080/`
 
 5. Optional: The output will dynamically generated in the docker container in the `output` directory.Enter into the container using following command:
@@ -20,9 +22,11 @@
 
 2. `sudo docker build -t multiple-files-wc .`
 
-3. `sudo docker run --name multiple-files-wc-ctr -p 9081:9081 multiple-files-wc`. This is running in non-deamon mode for troubleshooting and log analysis.
+3. `sudo docker run --name multiple-files-wc-ctr -p 9081:9081 multiple-files-wc`. 
 
-5.  I exposed the output as a web service. So, Open browser and type:
+This is running in non-deamon mode for troubleshooting and log analysis.
+
+5.  Accesing the output: I exposed the output as a web service. So, Open browser and type:
      `http://localhost:9081/multiplefileswordcount`
 
 4. Optional: The output will be dynamically generated in the docker container in the `output` directory. Enter into the container using following command:
