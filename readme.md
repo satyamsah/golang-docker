@@ -17,7 +17,7 @@ This is running in non-deamon mode for troubleshooting and log analysis.
 
 6. Pre-saved sample outfile "single-file-sample-output.csv" for reference.
 
-## Part-2 multiple_count_wordcount using goroutine
+## Part-2 multiple-files-wordcount using goroutine
 
 1. `cd ..` to come to main directory
 
@@ -36,4 +36,4 @@ This is running in non-deamon mode for troubleshooting and log analysis.
 4. Optional: The output will be dynamically generated in the docker container in the `output` directory. Enter into the container using following command:
    `docker exec -it /bin/bash multiple-files-wc-ctr` and `cd /output` to see the output file
 
-6. Pre-saved sample outfile "multiplefiles-sample-output.csv" for refrence.
+6. Pre-saved sample outfile "multiplefiles-sample-output.csv" for reference.
