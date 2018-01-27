@@ -17,7 +17,7 @@ This is running in non-deamon mode for troubleshooting and log analysis.
 
 6. Pre-saved sample outfile "single-file-sample-output.csv" for reference.
 
-## Part-2 multiple_count_wordcount using goroutine
+## Part-2 multiple-files-wordcount using goroutine
 
 1. `cd ..` to come to main directory
 
