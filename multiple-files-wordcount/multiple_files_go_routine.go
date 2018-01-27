@@ -14,7 +14,7 @@ import (
 	"log"
 )
 
-
+//logic to render webpage
 func indexHandler2( w http.ResponseWriter, r *http.Request){
 
 	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
@@ -46,7 +46,7 @@ type ReducerFunction func(chan interface{}, chan interface{})
 
 
 
-
+//reading the file
 func myReadFile(filename string) chan string {
 	output := make(chan string)
 	reg, _ := regexp.Compile("[^A-Za-z0-9]+")
@@ -91,7 +91,7 @@ func getFiles(dirname string) chan interface{} {
 	return output
 }
 
-
+//helper for reduce
 func reducerDispatcher(collector MapCollector, reducerInput chan interface{}) {
 
 	for output := range collector {
@@ -111,7 +111,7 @@ func mapperDispatcher(mapper MapperFunction, input chan interface{}, collector M
 	close(collector)
 }
 
-
+//single file word count
 func mapper(filename interface{}, output chan interface{}) {
 
 	results := map[string]int{}
@@ -127,6 +127,7 @@ func mapper(filename interface{}, output chan interface{}) {
 	output <- results
 }
 
+//reduce all the words coming from different source files
 func reducer(input chan interface{}, output chan interface{}) {
 
 	results := map[string]int{}
@@ -139,7 +140,7 @@ func reducer(input chan interface{}, output chan interface{}) {
 }
 
 
-
+//heavy lifting is done by this function
 func mapReduce(mapper MapperFunction, reducer ReducerFunction, input chan interface{}) interface{} {
 
 	reducerInput := make(chan interface{})
@@ -174,6 +175,7 @@ func main() {
 
 	defer filehandle.Close()
 
+	//writing to file
 	writer := bufio.NewWriter(filehandle)
 
 	allfilewordcountmap =results.(map[string]int)
@@ -188,6 +190,8 @@ func main() {
 	elapsedtime := time.Since(starttime)
 
 	fmt.Println("Time taken:",elapsedtime)
+
+	//calling the web-rendering function
 	http.HandleFunc("/multiplefileswordcount", indexHandler2)
 	http.ListenAndServe(":9081", nil)
 

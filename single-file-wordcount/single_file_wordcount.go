@@ -13,7 +13,7 @@ import (
 	"time"
 )
 
-//to show in the webbroser
+//logic to show in the web browser
 func indexHandler1( w http.ResponseWriter, r *http.Request){
 
 	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
@@ -38,6 +38,7 @@ var wordcountMap =map[string]int{}
 
 func main() {
 	starttime := time.Now()
+
 	//wordcountMap := make(map[string]int)
 	inputfile, err := os.Open("/files/moby-000.txt")
 
@@ -58,11 +59,13 @@ func main() {
 		}
 	}
 
+	//writing to file
 	filehandle, err := os.Create("/output/" + "simplewordcountoutput.csv")
 	if err != nil {
 		fmt.Println("Error writing to file: ", err)
 		return
 	}
+
 	defer filehandle.Close()
 	writer := bufio.NewWriter(filehandle)
 	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
@@ -78,6 +81,8 @@ func main() {
 	elapsedtime := time.Since(starttime)
 	fmt.Println("Time taken:",elapsedtime)
 	writer.Flush()
+
+	//calling the web-rendering function
 	http.HandleFunc("/", indexHandler1)
 	http.ListenAndServe(":9080", nil)
 	fmt.Println("Time taken:",elapsedtime)
