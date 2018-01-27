@@ -8,13 +8,14 @@
 
 This is running in non-deamon mode for troubleshooting and log analysis.
 
-4. Accesing the output: I exposed the outputfile as a web service. So, Open browser and type :
+4. **Accesing the output**: I exposed the outputfile as a web service. So, Open browser and type :
+
    `http://localhost:9080/`
 
 5. Optional: The output will dynamically generated in the docker container in the `output` directory.Enter into the container using following command:
    `docker exec -it /bin/bash single-file-wc-ctr` and `cd /output` to see the output file
 
-6. Sample output in csv is named as "sinlge-file-sample-output". Pre-saved by me
+6. re-saved sample outfile   "single-file-sample-output"for reference.
 
 ## Part-2 multiple_count_wordcount using goroutine
 
@@ -26,7 +27,8 @@ This is running in non-deamon mode for troubleshooting and log analysis.
 
 This is running in non-deamon mode for troubleshooting and log analysis.
 
-5.  Accesing the output: I exposed the output as a web service. So, Open browser and type:
+5.  **Accesing the output**: I exposed the output as a web service. So, Open browser and type:
+
      `http://localhost:9081/multiplefileswordcount`
 
 4. Optional: The output will be dynamically generated in the docker container in the `output` directory. Enter into the container using following command:
