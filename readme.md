@@ -4,7 +4,7 @@
 
 2. `sudo docker build -t single-file-wc .`
 
-3. `sudo docker run --name single-file-wc-ctr -p 9080:9080 single-file-wc`.
+3. `sudo docker run --name single-file-wc-ctr -p 9080:9080 single-file-wc`
 
 This is running in non-deamon mode for troubleshooting and log analysis.
 
@@ -25,7 +25,7 @@ This is running in non-deamon mode for troubleshooting and log analysis.
 
 2. `sudo docker build -t multiple-files-wc .`
 
-3. `sudo docker run --name multiple-files-wc-ctr -p 9081:9081 multiple-files-wc`. 
+3. `sudo docker run --name multiple-files-wc-ctr -p 9081:9081 multiple-files-wc`
 
 This is running in non-deamon mode for troubleshooting and log analysis.
 
