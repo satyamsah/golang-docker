@@ -21,7 +21,7 @@ This is running in non-deamon mode for troubleshooting and log analysis.
 
 1. `cd ..` to come to main directory
 
-2. `cd multiple_count_wordcount`
+2. `cd multiple-files-wordcount`
 
 2. `sudo docker build -t multiple-files-wc .`
 
